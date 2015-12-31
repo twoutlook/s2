@@ -7,6 +7,27 @@ console.log ("... start server.js!");
 var Firebase = require("firebase");
 var myFirebaseRef = new Firebase("https://youbike2.firebaseio.com/");
 
+console.log ("... before auth");
+//mark-omg
+// var token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InVpZCI6Im1hcmstb21nIiwic29tZSI6ImFyYml0cmFyeSIsImRhdGEiOiJoZXJlIn0sImlhdCI6MTQ1MTU2OTIxNH0.5VcBMOaIODPZyzoLRXfmhXVFXgUm-amiaXhZSvuGtG4";
+
+//admin
+var token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InVpZCI6ImFkbWluIiwiY2hpbmVzZSI6Iui2hee0mueuoeeQhuWToSIsInNvbWUiOiJhcmJpdHJhcnkiLCJkYXRhIjoiaGVyZSJ9LCJpYXQiOjE0NTE1NzE0Mzd9.8wXWTagoogpnz-8hShZMSz1WKHxeLOv7BEktcEETk0k";
+
+
+//https://www.firebase.com/docs/web/api/firebase/authwithcustomtoken.html
+myFirebaseRef.authWithCustomToken(token, function(error, authData) {
+  if (error) {
+    console.log("Authentication Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+    console.log("uid:", authData.uid);
+
+
+
+  }
+});
+console.log ("... after auth");
 var url ="http://data.taipei/youbike";//youbike即時資訊
 
 var request = require('request');
