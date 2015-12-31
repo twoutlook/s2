@@ -3,6 +3,7 @@
 //
 // A simple chat server using Socket.IO, Express, and Async.
 //
+console.log ("... Year 2016!");
 console.log ("... start server.js!");
 var Firebase = require("firebase");
 var myFirebaseRef = new Firebase("https://youbike2.firebaseio.com/");
