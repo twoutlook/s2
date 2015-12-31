@@ -9,3 +9,6 @@ as source for http://tws2.azurewebsites.net/, by twcloudwebapp@outlook
 
 # consumer
 http://twc1.azurewebsites.net/youbike.html
+
+# Azure console.log, really clear!!!
+https://tws2.scm.azurewebsites.net/api/vfs/LogFiles/Application/a8ecd1-15676-stdout-1451580239600.txt
