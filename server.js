@@ -22,11 +22,11 @@ myFirebaseRef.authWithCustomToken(token, function(error, authData) {
     console.log("Authentication Failed!", error);
   } else {
   //  console.log("Authenticated successfully with payload:", authData);
-    console.log("uid:", authData.uid);
+  console.log("uid:", authData.uid);
 
 
 
-  }
+}
 });
 console.log ("... after auth");
 var url ="http://data.taipei/youbike";//youbike即時資訊
@@ -132,13 +132,13 @@ var j = schedule.scheduleJob('*/30 * * * * *', function(){
   var strDate=new Date().toISOString().
   replace(/T/, ' ').      // replace T with a space
   replace(/\..+/, '')     // delete the dot and everything after
-    
+  
   cnt++;
   console.log('...to update firebase... cnt='+cnt+ " "+strDate);
   
   request.get(options, function (error, response, body) {
 
-  if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode == 200) {
     // If response is gzip, unzip first
     var encoding = response.headers['content-encoding']
     if (encoding && encoding.indexOf('gzip') >= 0) {
@@ -148,9 +148,9 @@ var j = schedule.scheduleJob('*/30 * * * * *', function(){
         
         // console.log(" NOW?retCode "+ json.retCode);
         // console.log(" NOW?retCode "+ json.retVal);
-     console.log('...### before myFirebaseRef.set(json.retVal);');
-        var result= myFirebaseRef.set(json.retVal);
-          console.log('...### after myFirebaseRef.set(json.retVal); result='+result);
+        console.log('...### before myFirebaseRef.set(json.retVal);');
+        myFirebaseRef.set(json.retVal);
+        console.log('...### after myFirebaseRef.set(json.retVal); result=???');
         // Process the json..
       });
     } else {
