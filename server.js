@@ -5,7 +5,7 @@
 // c9.io has similar situation, but no sure if upgrade will solve this problem
 
 var url_source="http://data.taipei/youbike";
-var url_target="https://youbike2.firebaseio.com/azure";
+var url_target="https://youbike2.firebaseio.com/azure/";
 var token_admin="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InVpZCI6ImFkbWluIiwiY2hpbmVzZSI6Iui2hee0mueuoeeQhuWToSIsInNvbWUiOiJhcmJpdHJhcnkiLCJkYXRhIjoiaGVyZSJ9LCJpYXQiOjE0NTE1NzE0Mzd9.8wXWTagoogpnz-8hShZMSz1WKHxeLOv7BEktcEETk0k";
 
 var Firebase= require("firebase");
