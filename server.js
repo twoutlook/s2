@@ -21,7 +21,7 @@ myFirebaseRef.authWithCustomToken(token, function(error, authData) {
   if (error) {
     console.log("Authentication Failed!", error);
   } else {
-    console.log("Authenticated successfully with payload:", authData);
+  //  console.log("Authenticated successfully with payload:", authData);
     console.log("uid:", authData.uid);
 
 
@@ -127,13 +127,15 @@ var schedule = require('node-schedule');
 
 var cnt=0;
 var j = schedule.scheduleJob('*/30 * * * * *', function(){
+
+  //
   var strDate=new Date().toISOString().
   replace(/T/, ' ').      // replace T with a space
   replace(/\..+/, '')     // delete the dot and everything after
-  
-  
+    
   cnt++;
   console.log('...to update firebase... cnt='+cnt+ " "+strDate);
+  
   request.get(options, function (error, response, body) {
 
   if (!error && response.statusCode == 200) {
@@ -146,8 +148,9 @@ var j = schedule.scheduleJob('*/30 * * * * *', function(){
         
         // console.log(" NOW?retCode "+ json.retCode);
         // console.log(" NOW?retCode "+ json.retVal);
-     
-         myFirebaseRef.set(json.retVal);
+     console.log('...### before myFirebaseRef.set(json.retVal);');
+        var result= myFirebaseRef.set(json.retVal);
+          console.log('...### after myFirebaseRef.set(json.retVal); result='+result);
         // Process the json..
       });
     } else {
